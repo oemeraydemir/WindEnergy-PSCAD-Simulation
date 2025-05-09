@@ -1,0 +1,391 @@
+<project name="WIND_TURBINE" version="4.5.0" schema="0" Target="EMTDC">
+  <paramlist name="Settings">
+    <param name="creator" value="58,1746794578" />
+    <param name="time_duration" value="0.5" />
+    <param name="time_step" value="50" />
+    <param name="sample_step" value="250" />
+    <param name="chatter_threshold" value=".001" />
+    <param name="branch_threshold" value=".0005" />
+    <param name="StartType" value="0" />
+    <param name="PlotType" value="0" />
+    <param name="output_filename" value="noname.out" />
+    <param name="SnapType" value="0" />
+    <param name="SnapTime" value="0.3" />
+    <param name="snapshot_filename" value="noname.snp" />
+    <param name="MrunType" value="0" />
+    <param name="Mruns" value="10" />
+    <param name="Scenario" value="" />
+    <param name="Advanced" value="10239" />
+    <param name="Options" value="16" />
+    <param name="Build" value="18" />
+    <param name="Warn" value="0" />
+    <param name="Check" value="0" />
+    <param name="description" value="" />
+    <param name="revisor" value="58, 1746806253" />
+    <param name="startup_filename" value="" />
+  </paramlist>
+  <paramlist name="Validation" />
+  <hierarchy>
+    <call name="Station" link="725368161" z="-1" instance="-1" view="false">
+      <call name="Main" link="355358532" z="-1" view="true" instance="-1" />
+    </call>
+  </hierarchy>
+  <definitions>
+    <Definition classid="StationDefn" name="Station" group="" url="" version="" build="" crc="4085232" instances="1" key="" view="false">
+      <paramlist name="">
+        <param name="Description" value="" />
+      </paramlist>
+      <schematic classid="StationCanvas">
+        <paramlist>
+          <param name="show_grid" value="0" />
+          <param name="size" value="0" />
+          <param name="orient" value="1" />
+          <param name="show_border" value="0" />
+          <param name="bus_expand_x" value="8" />
+          <param name="bus_expand_y" value="8" />
+          <param name="bus_length" value="4" />
+        </paramlist>
+        <Wire classid="WireBranch" name="WIND_TURBINE:Main" x="180" y="180" w="62" h="80" orient="0" defn="WIND_TURBINE:Main" id="355358532" recv="-1" send="-1" back="-1">
+          <vertex x="0" y="0" />
+          <vertex x="0" y="18" />
+          <vertex x="54" y="54" />
+          <vertex x="54" y="72" />
+          <User classid="UserCmp" name="WIND_TURBINE:Main" id="355358532" x="0" y="0" w="0" h="0" z="-1" orient="0" defn="WIND_TURBINE:Main" link="355358532">
+            <paramlist link="-1" name="" />
+          </User>
+        </Wire>
+      </schematic>
+    </Definition>
+    <Definition classid="UserCmpDefn" name="Main" group="" url="" version="" build="" crc="118800276" instances="1" key="" view="false" date="0">
+      <paramlist name="">
+        <param name="Description" value="" />
+      </paramlist>
+      <form name="" w="320" h="400" splitter="60">
+        <category name="Global Substitutions" />
+      </form>
+      <svg viewBox="-200 -200 200 200">
+        <rect x="-36" y="-36" width="72" height="72" stroke="Black" stroke-dasharray="none" stroke-width="0.2" fill-style="Hollow" fill-fg="" fill-bg="" />
+        <text x="0" y="0" stroke="Black" fill="Black" font-size="Small"><![CDATA[%:Name]]></text>
+      </svg>
+      <schematic classid="UserCanvas">
+        <paramlist>
+          <param name="show_grid" value="0" />
+          <param name="size" value="0" />
+          <param name="orient" value="1" />
+          <param name="show_border" value="0" />
+          <param name="monitor_bus_voltage" value="0" />
+          <param name="show_signal" value="0" />
+          <param name="show_virtual" value="0" />
+          <param name="show_sequence" value="0" />
+          <param name="auto_sequence" value="1" />
+        </paramlist>
+        <User classid="UserCmp" name="master:wind_source" id="1674942925" x="270" y="216" w="135" h="76" z="0" orient="0" defn="master:wind_source" link="-1">
+          <paramlist link="-1" name="">
+            <param name="EXT" value="0" />
+            <param name="BWV" value="13 [m/s]" />
+            <param name="Gust" value="0" />
+            <param name="Ramp" value="0" />
+            <param name="Noise" value="0" />
+            <param name="Damp" value="0" />
+            <param name="TC" value="0.025 [s]" />
+            <param name="MAXG" value="1.0 [m/s]" />
+            <param name="TG" value="1.0 [s]" />
+            <param name="T1G" value="1.0 [s]" />
+            <param name="NG" value="1.0" />
+            <param name="MAXR" value="1.0 [m/s]" />
+            <param name="TR" value="1.0 [s]" />
+            <param name="T1R" value="3.0 [s]" />
+            <param name="NR" value="1.0" />
+            <param name="N" value="50" />
+            <param name="DW" value="1 [rad/s]" />
+            <param name="Kn" value="0.0192" />
+            <param name="F" value="600 [m]" />
+            <param name="ISEED" value="8" />
+            <param name="TRM" value="0.35 [s]" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:wind_turbine" id="11812213" x="486" y="234" w="153" h="130" z="0" orient="0" defn="master:wind_turbine" link="-1">
+          <paramlist link="-1" name="">
+            <param name="Gmva" value="2 [MVA]" />
+            <param name="Wrat" value="376.99 [rad/s]" />
+            <param name="Rad" value="41.7 [m]" />
+            <param name="Area" value="5462 [m*m]" />
+            <param name="Airden" value="1.225 [kg/m^3]" />
+            <param name="Eff" value="1 [pu]" />
+            <param name="Gratio" value="1" />
+            <param name="Mod" value="0" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:wind_governor" id="769569038" x="486" y="450" w="138" h="95" z="0" orient="0" defn="master:wind_governor" link="-1">
+          <paramlist link="-1" name="">
+            <param name="Pcnt" value="1" />
+            <param name="Gen" value="1" />
+            <param name="Wrat" value="2.61 [rad/s]" />
+            <param name="Tmva" value="2.4 [MW]" />
+            <param name="Gmva" value="2 [MVA]" />
+            <param name="Gov" value="0" />
+            <param name="Gr" value="1 [pu]" />
+            <param name="Pref" value="2.4 [MW]" />
+            <param name="Wref" value="2.61 [rad/s]" />
+            <param name="Kp" value="6.2 [deg/pu]" />
+            <param name="Ki" value="6.2 [deg/pu]" />
+            <param name="Piul" value="30" />
+            <param name="Pill" value="-30" />
+            <param name="Ks" value="46.9 [deg/pu]" />
+            <param name="Gmul" value="0 [deg/pu]" />
+            <param name="Dwm" value="0.0001 [rad/s]" />
+            <param name="Bo" value="0 [deg]" />
+            <param name="K4" value="0.1 [s]" />
+            <param name="Arl" value="0" />
+            <param name="Rl" value="10.0 [deg/s]" />
+            <param name="Pal" value="1" />
+            <param name="Bll" value="0 [deg]" />
+            <param name="Bul" value="25 [deg]" />
+            <param name="Nf" value="0" />
+            <param name="Type" value="5" />
+            <param name="Wf" value="10.0 [rad/s]" />
+            <param name="Df" value="0.3" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" defn="master:consti" id="765923681" x="450" y="324" w="67" h="17" z="0" orient="0" link="-1">
+          <paramlist link="-1" name="">
+            <param name="Name" value="" />
+            <param name="Value" value="0" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" name="" x="486" y="306" w="8" h="26" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="0" y="18" />
+        </Wire>
+        <User classid="UserCmp" defn="master:const" id="1241823513" x="720" y="180" w="67" h="17" z="0" orient="0" link="-1">
+          <paramlist link="-1" name="">
+            <param name="Name" value="" />
+            <param name="Value" value="1.0" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:sync_machine" id="307591069" x="792" y="306" w="110" h="146" z="0" orient="0" defn="master:sync_machine" link="-1">
+          <paramlist link="-1" name="">
+            <param name="Name" value="Sync1" />
+            <param name="Nqaxw" value="1" />
+            <param name="Cnfg" value="0" />
+            <param name="MM" value="1" />
+            <param name="CfRa" value="1" />
+            <param name="MSat" value="0" />
+            <param name="icTyp" value="1" />
+            <param name="Iscl" value="1" />
+            <param name="View" value="1" />
+            <param name="itrfa" value="0" />
+            <param name="izro" value="0" />
+            <param name="Icsp" value="0" />
+            <param name="Icmp" value="0" />
+            <param name="Immd" value="0" />
+            <param name="Ifmlt" value="0" />
+            <param name="Term" value="0" />
+            <param name="Ts" value="0.02 [s]" />
+            <param name="Iexc" value="0" />
+            <param name="Igov" value="0" />
+            <param name="Ospd" value="0" />
+            <param name="machsw" value="1" />
+            <param name="Enab" value="1" />
+            <param name="npadjs" value="0" />
+            <param name="pset" value="0.0 [MW]" />
+            <param name="nftrsw" value="0" />
+            <param name="hmult" value="1.0" />
+            <param name="sdmftr" value="1.0" />
+            <param name="sdmspd" value="1.0" />
+            <param name="npadjm" value="0" />
+            <param name="fldmlt" value="1.0" />
+            <param name="nfldsw" value="0" />
+            <param name="Vbase" value="10.0 [kV]" />
+            <param name="Ibase" value="10.0 [kA]" />
+            <param name="OMO" value="376.992 [rad/s]" />
+            <param name="H" value="2.0 [s]" />
+            <param name="D" value="0.0 [pu]" />
+            <param name="RNeut" value="1.0E4 [pu]" />
+            <param name="XNeut" value="0.0 [pu]" />
+            <param name="Ri" value="300.0 [pu]" />
+            <param name="NOM" value="1.0" />
+            <param name="Rs1" value="0.002 [pu]" />
+            <param name="XS1" value="0.14 [pu]" />
+            <param name="XMD0" value="1.66 [pu]" />
+            <param name="R2D" value="1.4068E-03 [pu]" />
+            <param name="X2D" value="6.1789E-02 [pu]" />
+            <param name="R3D" value="4.0699E-03 [pu]" />
+            <param name="X3D" value="5.4581E-03 [pu]" />
+            <param name="X230" value="0.0 [pu]" />
+            <param name="XMQ" value="1.58 [pu]" />
+            <param name="R2Q" value="1.4145E-02 [pu]" />
+            <param name="X2Q" value="0.32928 [pu]" />
+            <param name="R3Q" value="8.1942E-03 [pu]" />
+            <param name="X3Q" value="9.4199E-02 [pu]" />
+            <param name="X231" value="0.0 [pu]" />
+            <param name="Ra" value="0.002 [pu]" />
+            <param name="Ta" value="0.332 [s]" />
+            <param name="Xp" value="0.130 [pu]" />
+            <param name="Xd" value="1.79 [pu]" />
+            <param name="Xd_" value="0.169 [pu]" />
+            <param name="Tdo_" value="4.3 [s]" />
+            <param name="Xd__" value="0.135 [pu]" />
+            <param name="Tdo__" value="0.032 [s]" />
+            <param name="Gfld" value="1.0E+2 [pu]" />
+            <param name="Xkf" value="1.0E+2 [pu]" />
+            <param name="Xq" value="1.71 [pu]" />
+            <param name="Xq_" value="0.228 [pu]" />
+            <param name="Tqo_" value="0.85 [s]" />
+            <param name="Xq__" value="0.2 [pu]" />
+            <param name="Tqo__" value="0.05 [s]" />
+            <param name="AGFC" value="1.0" />
+            <param name="X1" value="0.0" />
+            <param name="Y1" value="0.0 [pu]" />
+            <param name="X2" value="0.5" />
+            <param name="Y2" value="0.5 [pu]" />
+            <param name="X3" value="0.8" />
+            <param name="Y3" value="0.8 [pu]" />
+            <param name="X4" value="1.0" />
+            <param name="Y4" value="1.0 [pu]" />
+            <param name="X5" value="1.2" />
+            <param name="Y5" value="1.2 [pu]" />
+            <param name="X6" value="1.5" />
+            <param name="Y6" value="1.5 [pu]" />
+            <param name="X7" value="1.8" />
+            <param name="Y7" value="1.8 [pu]" />
+            <param name="X8" value="2.2" />
+            <param name="Y8" value="2.2 [pu]" />
+            <param name="X9" value="3.2" />
+            <param name="Y9" value="3.2 [pu]" />
+            <param name="X10" value="4.2" />
+            <param name="Y10" value="4.2 [pu]" />
+            <param name="VT" value="1.0 [pu]" />
+            <param name="Pheta" value="0.0 [rad]" />
+            <param name="Trmpv" value="0.1 [s]" />
+            <param name="Sysfl" value="100.0 [pu]" />
+            <param name="Ptcon" value="0.2 [s]" />
+            <param name="P0" value="0.0 [MW]" />
+            <param name="Q0" value="0.0 [MVAR]" />
+            <param name="Theti" value="3.141592 [rad]" />
+            <param name="Idi" value="0.0 [pu]" />
+            <param name="Iqi" value="0.0 [pu]" />
+            <param name="Ifi" value="0.0 [pu]" />
+            <param name="Spdi" value="1.0 [pu]" />
+            <param name="POut" value="" />
+            <param name="QOut" value="" />
+            <param name="Vneut" value="" />
+            <param name="Cneut" value="" />
+            <param name="Lang" value="" />
+            <param name="Theta" value="" />
+            <param name="Wang" value="" />
+            <param name="Tesmt" value="" />
+            <param name="PQscl" value="0" />
+            <param name="InExc" value="InitEx" />
+            <param name="InGov" value="InitGv" />
+            <param name="Mon1" value="1" />
+            <param name="Chn1" value="" />
+            <param name="Mon2" value="1" />
+            <param name="Chn2" value="" />
+            <param name="Mon3" value="1" />
+            <param name="Chn3" value="" />
+            <param name="Mon4" value="1" />
+            <param name="Chn4" value="" />
+            <param name="Mon5" value="1" />
+            <param name="Chn5" value="" />
+            <param name="Mon6" value="1" />
+            <param name="Chn6" value="" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" name="" x="756" y="234" w="8" h="62" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="0" y="-54" />
+        </Wire>
+        <Wire classid="WireOrthogonal" name="" x="630" y="216" w="224" h="332" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="0" y="324" />
+          <vertex x="216" y="324" />
+          <vertex x="216" y="162" />
+          <vertex x="198" y="162" />
+        </Wire>
+        <Wire classid="WireOrthogonal" name="" x="558" y="216" w="80" h="8" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="72" y="0" />
+        </Wire>
+        <Wire classid="WireOrthogonal" name="" x="792" y="378" w="44" h="8" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="36" y="0" />
+        </Wire>
+        <Wire classid="WireOrthogonal" name="" x="414" y="468" w="260" h="296" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="-72" y="0" />
+          <vertex x="-72" y="72" />
+          <vertex x="180" y="72" />
+          <vertex x="180" y="-216" />
+          <vertex x="126" y="-216" />
+          <vertex x="144" y="-216" />
+        </Wire>
+        <Wire classid="WireOrthogonal" name="" x="342" y="216" w="80" h="8" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="72" y="0" />
+        </Wire>
+        <Wire classid="WireOrthogonal" name="" x="414" y="432" w="62" h="188" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="-54" y="0" />
+          <vertex x="-54" y="-180" />
+          <vertex x="0" y="-180" />
+        </Wire>
+        <User classid="UserCmp" name="master:div" id="1042602708" x="324" y="360" w="74" h="55" z="0" orient="0" defn="master:div" link="-1">
+          <paramlist link="-1" name="" />
+        </User>
+        <User classid="UserCmp" name="master:mult" id="127533063" x="252" y="360" w="74" h="51" z="0" orient="0" defn="master:mult" link="-1">
+          <paramlist link="-1" name="">
+            <param name="DPath" value="1" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:datalabel" id="612959065" x="756" y="378" w="10" h="20" z="0" orient="0" defn="master:datalabel" link="-1">
+          <paramlist link="-1" name="">
+            <param name="Name" value="w" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:datalabel" id="967157929" x="216" y="360" w="10" h="20" z="0" orient="0" defn="master:datalabel" link="-1">
+          <paramlist link="-1" name="">
+            <param name="Name" value="w" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:const" id="280048192" x="198" y="414" w="67" h="17" z="0" orient="0" defn="master:const" link="-1">
+          <paramlist link="-1" name="">
+            <param name="Name" value="" />
+            <param name="Value" value="314" />
+          </paramlist>
+        </User>
+        <User classid="UserCmp" name="master:const" id="332309244" x="288" y="432" w="67" h="17" z="0" orient="0" defn="master:const" link="-1">
+          <paramlist link="-1" name="">
+            <param name="Name" value="" />
+            <param name="Value" value="120" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" name="" x="234" y="414" w="26" h="26" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="18" y="0" />
+          <vertex x="18" y="-18" />
+        </Wire>
+        <Wire classid="WireOrthogonal" name="" x="324" y="396" w="8" h="44" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="0" y="36" />
+        </Wire>
+        <User classid="UserCmp" name="master:resistor" id="111400435" x="918" y="306" w="60" h="29" z="0" orient="0" defn="master:resistor" link="-1">
+          <paramlist link="-1" name="">
+            <param name="R" value="0.14 [ohm]" />
+          </paramlist>
+        </User>
+        <Wire classid="WireOrthogonal" name="" x="828" y="306" w="98" h="8" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="90" y="0" />
+        </Wire>
+        <User classid="UserCmp" name="master:ground" id="2009219359" x="1026" y="306" w="20" h="26" z="0" orient="1" defn="master:ground" link="-1">
+          <paramlist link="-1" name="" />
+        </User>
+        <Wire classid="WireOrthogonal" name="" x="954" y="306" w="80" h="8" orient="0">
+          <vertex x="0" y="0" />
+          <vertex x="72" y="0" />
+        </Wire>
+      </schematic>
+    </Definition>
+  </definitions>
+</project>

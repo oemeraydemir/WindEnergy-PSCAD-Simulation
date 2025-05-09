@@ -1,0 +1,8 @@
+<Project name="WIND_TURBINE">
+  <hierarchy />
+  <messagelist />
+  <emt />
+  <views>
+    <view name="Main" zoomlevel="6" scrollx="0" scrolly="0" />
+  </views>
+</Project>
